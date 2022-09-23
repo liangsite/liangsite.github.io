@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hai.ergua.cc/sitemap.xml
