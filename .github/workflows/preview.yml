@@ -10,7 +10,7 @@ on:
       - 'public/**'
       - '.gitmodules'
       - 'themes'
-      - 'config.toml'
+      - 'config/_default/config.toml'
 
 jobs:
   deploy:

@@ -1,2 +1,2 @@
 # liangsite.github.io
-# 小橘子Single
+# https://hai.ergua.cc/
