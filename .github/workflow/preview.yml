@@ -2,10 +2,10 @@ name: GitHub Pages
 
 on:
   push:
+    branches: [main]  # Set a branch to deploy
     paths:
-      - public/**
-    branches:
-      - main  # Set a branch to deploy
+      - 'public/**'
+
   pull_request:
 
 jobs:
