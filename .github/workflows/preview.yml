@@ -3,10 +3,9 @@ name: GitHub Pages
 on:
   push:
     branches: [ main ]  # Set a branch to deploy
-    paths:
-      - 'public/**'
-      - 'themes/**'
-      - 'config.toml'
+      paths:
+        - 'public/**'
+        - 'config.toml'
 
   pull_request:
 
