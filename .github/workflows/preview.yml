@@ -2,12 +2,15 @@ name: GitHub Pages
 
 on:
   push:
-    branches: [ main ]  # Set a branch to deploy
-      paths:
-        - 'public/**'
-        - 'config.toml'
+    branches: 
+      - main  # Set a branch to deploy
 
   pull_request:
+    paths:
+      - 'public/**'
+      - '.gitmodules'
+      - 'themes'
+      - 'config.toml'
 
 jobs:
   deploy:
