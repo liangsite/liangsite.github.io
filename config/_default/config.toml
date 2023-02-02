@@ -257,7 +257,7 @@
 
   # FixIt 0.2.16 | CHANGED Social config about the author
   [params.social]
-    GitHub = "https://github.com/liangsite/liangsite.github.io/"
+    GitHub = "liangsite/liangsite.github.io/"
     Linkedin = ""
     Twitter = ""
     Instagram = ""
@@ -327,7 +327,7 @@
     QQ = ""
     QQGroup = "" # https://qun.qq.com/join.html
     Diaspora = ""
-    CSDN = ""
+    CSDN = "weixin_45971087?type=blog"
     Discord = ""
     DiscordInvite = ""
     Lichess = ""
