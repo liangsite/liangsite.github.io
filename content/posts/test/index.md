@@ -14,7 +14,7 @@ this is a test
 
 <script src="https://utteranc.es/client.js"
         repo="liangsite/liangsite.github.io"
-        issue-term="title"
+        issue-term="pathname"
         theme="github-light"
         crossorigin="anonymous"
         async>
