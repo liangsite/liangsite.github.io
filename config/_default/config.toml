@@ -592,7 +592,7 @@
       [params.page.comment.utterances]
         enable = true  # false
         # owner/repo
-        repo = "liangsite/liangsite.github.io.git"
+        repo = "liangsite/liangsite.github.io"
         issueTerm = "pathname"
         label = ""
         lightTheme = "github-light"
