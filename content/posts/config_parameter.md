@@ -37,6 +37,7 @@ repost:
   enable: false
   url: ""
 
+utterances: true
 # See details front matter: https://fixit.lruihao.cn/theme-documentation-content/#front-matter
 ---
 
