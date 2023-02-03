@@ -7,7 +7,8 @@ description: "小橘子Single' blog"
 keywords: 
   - Hugo
   - friends template
-comment: true
+comment:
+  utterances: true
 ---
 <!-- When you set data `friends.yml` in `yourProject/data/` directory, it will be automatically loaded here. -->
 ---
