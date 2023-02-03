@@ -7,7 +7,7 @@ description: "小橘子Single' blog"
 keywords: 
   - Hugo
   - friends template
-comment: false
+comment: true
 ---
 <!-- When you set data `friends.yml` in `yourProject/data/` directory, it will be automatically loaded here. -->
 ---
@@ -36,3 +36,12 @@ comment: false
 
 3.那些不尊重他人劳动成果、无来源转载或恶意行为的网站，请不要前来交流。
 {{< /admonition >}}
+
+
+<script src="https://utteranc.es/client.js"
+        repo="liangsite/liangsite.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
