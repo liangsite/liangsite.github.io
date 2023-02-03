@@ -50,6 +50,16 @@
     weight = 3
     [menu.main.params]
       icon = "fa-solid fa-tags"
+  [[menu.main]]
+    identifier = "friends"
+    pre = ""
+    post = ""
+    name = "友链"
+    url = "/friends/"
+    title = ""
+    weight = 3
+    [menu.main.params]
+      icon = "fa-solid fa-users"
 
 # -------------------------------------------------------------------------------------
 # Theme Core Configuration
@@ -149,7 +159,7 @@
       # you can add extra information after the name (HTML format is supported), such as icons
       post = ""
       # FixIt 0.2.5 | NEW whether to use typeit animation for title name
-      typeit = false
+      typeit = true  # false
     # FixIt 0.2.12 | NEW Header subtitle config
     [params.header.subtitle]
       # subtitle name
@@ -580,9 +590,9 @@
         enable = false
       # FixIt 0.2.5 | NEW Utterances comment config (https://utteranc.es)
       [params.page.comment.utterances]
-        enable = false
+        enable = true  # false
         # owner/repo
-        repo = ""
+        repo = "liangsite/liangsite.github.io.git"
         issueTerm = "pathname"
         label = ""
         lightTheme = "github-light"
