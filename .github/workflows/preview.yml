@@ -11,6 +11,9 @@ on:
       - '.gitmodules'
       - 'themes'
       - 'config/_default/config.toml'
+      - 'static/**'
+      - 'layouts/**'
+      - 'data/**'
 
 jobs:
   deploy:
