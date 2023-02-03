@@ -9,7 +9,7 @@ authorEmail: ""
 description: "配置文件参数值修改"
 keywords: ""
 license: ""
-comment: false
+comment: true
 weight: 0
 
 tags:
@@ -37,7 +37,6 @@ repost:
   enable: false
   url: ""
 
-utterances: true
 # See details front matter: https://fixit.lruihao.cn/theme-documentation-content/#front-matter
 ---
 
