@@ -4,7 +4,6 @@ about: 友链交换模板
 title: ''
 labels: ''
 assignees: ''
-
 ---
 
 - nickname: <your nickname>
