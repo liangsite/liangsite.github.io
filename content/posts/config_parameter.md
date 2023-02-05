@@ -9,7 +9,7 @@ authorEmail: ""
 description: "配置文件参数值修改"
 keywords: ""
 license: ""
-comment: true
+comment: false
 weight: 0
 
 tags:
@@ -241,11 +241,3 @@ git remote add origin git@github.com:yourname/yourname.github.io.git
 git pull
 git push -u origin main
 ```
-
-<script src="https://utteranc.es/client.js"
-        repo="liangsite/liangsite.github.io"
-        issue-term="title"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
