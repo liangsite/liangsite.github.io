@@ -12,10 +12,6 @@ license: ""
 comment: false
 weight: 0
 
-tags:
-- draft
-categories:
-- draft
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
@@ -42,4 +38,3 @@ repost:
 # See details front matter: https://fixit.lruihao.cn/theme-documentation-content/#front-matter
 ---
 
-<!--more-->
