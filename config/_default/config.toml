@@ -8,6 +8,7 @@
 # See: https://fixit.lruihao.cn/theme-documentation-basics/#menu-advanced-configuration
 # -------------------------------------------------------------------------------------
 # 是否支持rebote
+enableRoboteTXT = true
 [menu]
   [[menu.main]]
     identifier = "posts"
