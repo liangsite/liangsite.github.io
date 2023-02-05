@@ -4,7 +4,12 @@ subtitle: ""
 date: 2023-02-05T21:31:36+08:00
 draft: false
 description: ""
-comment: false 
+comment: 
+  utterances:
+    enabled = true
+    repo = "liangsite/utterances"
+    lightTheme = "github-light"
+    darkTheme = "github-dark"
 ---
 
 ### GolangIDE 设置试用30天重置
