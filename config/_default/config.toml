@@ -593,8 +593,8 @@ enableRoboteTXT = true
       [params.page.comment.utterances]
         enable = true
         # owner/repo
-        repo = "liangsite/liangsite.github.io"
-        issueTerm = "title"
+        repo = "liangsite/utterances"
+        issueTerm = "pathname"
         label = ""
         lightTheme = "github-light"
         darkTheme = "github-dark"
