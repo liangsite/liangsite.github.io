@@ -1,5 +1,5 @@
 ---
-title: "golang"
+title: "Golang"
 subtitle: ""
 date: 2023-02-05T21:31:36+08:00
 draft: false
