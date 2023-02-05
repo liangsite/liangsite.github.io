@@ -1,5 +1,4 @@
-{{ if and (.Site.Params.utterances.enable)(and(not.Params.disable_comments)(or(eq.Kind "404")(and(not.IsHome).Content))) }}
-<div class="comments">
+{{ if and (.Site.Params.utterances.enable)(and(not.Params.disable_comments)(or(eq.Kind "404")(and(not.IsHome).Content))) }}<div class="comments">
 <script
   src="https://utteranc.es/client.js"
   repo="liangsite/utterances"
@@ -7,5 +6,4 @@
   theme="github-light"
   crossorigin="anonymous"
   async
-></script>
-</div>{{ end }}
+></script></div>{{ end }}
