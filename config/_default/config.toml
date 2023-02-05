@@ -591,10 +591,10 @@ enableRoboteTXT = true
         enable = false
       # FixIt 0.2.5 | NEW Utterances comment config (https://utteranc.es)
       [params.page.comment.utterances]
-        enable = true  # false
+        enable = true
         # owner/repo
         repo = "liangsite/liangsite.github.io"
-        issueTerm = "pathname"
+        issueTerm = "title"
         label = ""
         lightTheme = "github-light"
         darkTheme = "github-dark"
