@@ -58,7 +58,7 @@ subtitle = "做个梦给你......"  # 首页显示字幕
 [params.header.title]
   logo = ""   # "/fixit.min.svg"  # 设置logo图片
   name = "小橘子Single"
-  pre = "pre = "<i class='fab fa-grav'></i>"  # 名称之前添加额外的信息(支持HTML格式)，例如图标
+  pre = "<i class='fab fa-grav'></i>"  # 名称之前添加额外的信息(支持HTML格式)，例如图标
   post = ""                                   # 名称之后添加额外的信息(支持HTML格式)，例如图标
   typeit = true    # 打字机效果
 ```
