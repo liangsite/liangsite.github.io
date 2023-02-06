@@ -13,9 +13,9 @@ comment: false
 weight: 0
 
 tags:
-- fixIt
+- FixIt
 categories:
-- hugo
+- Hugo
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
@@ -42,6 +42,7 @@ repost:
 
 <!--more-->
 
+## 配置文件参数值修改
 ### 主页头像设置
 位置正中间
 ```toml
@@ -60,6 +61,7 @@ subtitle = "做个梦给你......"  # 首页显示字幕
   name = "小橘子Single"
   pre = "pre = "<i class='fab fa-grav'></i>"  # 名称之前添加额外的信息(支持HTML格式)，例如图标
   post = ""                                   # 名称之后添加额外的信息(支持HTML格式)，例如图标
+  typeit = true    # 打字机效果
 ```
 
 ### 浏览器图片设置
@@ -232,6 +234,217 @@ jobs:               # 将工作流中运行的所有作业组合在一起
           cname: your domain   # 自定义域名
 ```
 
+### 添加友链
+#### 创建友链模板
+- 在根目录下创建一个友链模板 
+- `layouts/friends/single.html`
+```html
+{{- define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end -}}
+
+{{- define "content" -}}
+    {{- $params := .Scratch.Get "params" -}}
+    <div class="page single special">
+        {{- /* Title */ -}}
+        <h1 class="single-title animated pulse faster">
+            {{- .Title -}}
+        </h1>
+
+        {{- /* Subtitle */ -}}
+        {{- with $params.subtitle -}}
+            <h2 class="single-subtitle">{{ . }}</h2>
+        {{- end -}}
+
+        {{- /* Friend links */ -}}
+        {{- $loading := resources.Get "svg/loading.svg" | minify -}}
+        <script src="//at.alicdn.com/t/font_578712_g26jo2kbzd5qm2t9.js"></script>
+        <link rel="stylesheet" href="/friends/css/_friends.css" />
+        <div class="friend-links">
+            {{ range $index, $friend := .Site.Data.friends }}
+                <a
+                    class="friend-link"
+                    title="{{ $friend.description }}"
+                    href="{{ $friend.url | safeURL }}"
+                    rel="external nofollow noopener noreferrer"
+                    target="_blank">
+                    {{ if $friend.avatar }}
+                        <img
+                            class="friend-avatar lazyload" 
+                            src="{{ $loading.RelPermalink }}"
+                            data-src="{{ $friend.avatar }}"
+                            alt="{{ $friend.nickname }}" />
+                    {{ else }}
+                        <svg class="friend-avatar" aria-hidden="true">
+                            <use xlink:href="#icon-{{ add 1 $index }}"></use>
+                        </svg>
+                    {{ end }}
+                    <span class="friend-nickname" title="{{ $friend.nickname }}">@{{ $friend.nickname }}</span>
+                </a>
+            {{ end }}
+        </div>
+
+        {{- /* Content */ -}}
+        <div class="content" id="content">
+            {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}
+        </div>
+
+        {{- /* Comment */ -}}
+        {{- partial "comment.html" . -}}
+    </div>
+{{- end -}}
+```
+- 或者 cp 主题下的友链模板
+```shell script
+cp themes/FixIt/layouts/friends/   layouts/friends/
+```
+
+#### 友链模板样式
+- 新建`_friends.css`文件
+```css
+/**
+ * @Description: Style of layout named 'Friend links'.
+ * @Author: lruihao.cn
+ * @Updated:  2021/9/20 19:26
+ */
+ 
+.friend-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 576px) {
+  .friend-links {
+    justify-content: space-around;
+  }
+}
+.friend-link {
+  width: 150px;
+  height: 200px;
+  font-size: 1rem;
+  text-align: center;
+  background: rgba(255,255,255,0.3);
+  box-sizing: border-box; 
+  box-shadow: 3px 3px 5px #aaa;
+  border-radius: 5px;
+  border:none;
+  transition-duration: 0.3s;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.friend-link:hover {
+  background: #fff;
+  transform: scale(1.03);
+  box-shadow: 0 0 3px #aaa;
+}
+.friend-avatar {
+  object-fit: cover;
+  object-position: center;
+  width: 100%!important;
+  height: 150px!important;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+}
+.friend-nickname{
+  display: block;
+  position: relative;
+  color: #2bbc8a;
+  font-weight: bold;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 18px;
+  margin-bottom: 1rem;
+}
+.friend-nickname:hover {
+  color: #d480aa;
+}
+```
+#### 友链页面设置
+- 新建`friends/index.md`
+```shell script
+hugo new friends/index.md
+```
+1、将`_friends.css`文件放到 `content/friends/css/`目录下
+```shell script
+mkdir content/friends/css
+mv _friends.css content/friends/css/
+```
+
+2、打开友链页面 `content/friends/index.md`
+```markdown
+---
+title: "友情链接"
+subtitle: "需要交换友链下方留言哦 ~"
+type: "friends"
+date: 2023-02-03T09:31:19+08:00
+description: "小橘子Single' blog"
+keywords: 
+  - Hugo
+  - friends template
+comment: false
+---
+<!-- When you set data `friends.yml` in `yourProject/data/` directory, it will be automatically loaded here. -->
+---
+<!-- You can define additional content below for this page. -->
+```
+
+#### 添加友链
+- 新建数据文件 `data/friends.yml`
+```yaml
+# - nickname: 标题
+#   avatar: 头像
+#   url: 站点
+#   description: 描述
+
+- nickname: Lruihao
+  avatar: https://lruihao.cn/images/avatar.jpg
+  url: https://lruihao.cn
+  description: 不怕萬人阻擋，只怕自己投降
+```
+
+#### 配置添加友链
+- config.toml
+```yaml
+  [[menu.main]]
+    identifier = "friends"
+    pre = ""
+    post = ""
+    name = "友链"
+    url = "/friends/"
+    title = ""
+    weight = 3
+    [menu.main.params]
+      icon = "fa-solid fa-users"
+```
+
+### 评论系统设置
+- [Utterances 文档](https://utteranc.es)
+- [utterances 安装链接](https://github.com/apps/utterances) 评论系统设置
+
+1.安装utterances
+> 打开 utterances 安装链接 ---> 右上角安装 ---> 选择 Only select repositories ---> 点击install
+
+2.在根目录下修改`config.toml`配置文件，开启评论
+```toml
+      [params.page.comment.utterances]
+        enable = false
+        # owner/repo
+        repo = "liangsite/utterances"
+        issueTerm = "title"   # 这个参数可选pathname、url、title 
+        label = ""
+        lightTheme = "github-light"
+        darkTheme = "github-dark"
+``````text
+
+{{< admonition tip "提示" false >}}
+文章开头将`comment: falase` 这个参数删除，否则页面将不会显示评论。
+{{< /admonition >}}
+
 ### 推送GitHub
 - 将本地Hugo项目推送至GitHub，会自动触发Action构建部署pages
 ```shell script
@@ -241,6 +454,4 @@ git remote add origin git@github.com:yourname/yourname.github.io.git
 git pull
 git push -u origin main
 ```
-
-### 设置评论系统
 

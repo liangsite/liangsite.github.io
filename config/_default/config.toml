@@ -551,7 +551,7 @@ enableRoboteTXT = true
         # you can store your own data files in the same path under your project:
         # "assets/lib/valine/emoji/"
         emoji = ""
-        commentCount = true # FixIt 0.2.13 | NEW
+        commentCount = false # FixIt 0.2.13 | NEW
       # FixIt 0.2.16 | CHANGED Waline comment config (https://waline.js.org)
       [params.page.comment.waline]
         enable = false
@@ -591,10 +591,11 @@ enableRoboteTXT = true
         enable = false
       # FixIt 0.2.5 | NEW Utterances comment config (https://utteranc.es)
       [params.page.comment.utterances]
-        enable = true
+        enable = "true"
         # owner/repo
         repo = "liangsite/utterances"
-        issueTerm = "pathname"
+        # ["pathname","url","title","og:title"]
+        issueTerm = "title"
         label = ""
         lightTheme = "github-light"
         darkTheme = "github-dark"
@@ -821,4 +822,4 @@ enableRoboteTXT = true
 [module]
   [module.hugoVersion]
     extended = true
-    min = "0.84.0"
+    min = "0.105.0"
