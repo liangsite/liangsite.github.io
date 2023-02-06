@@ -6,6 +6,8 @@ draft: false
 description: "GlangIDE无限重置30天试用期"
 ---
 
+<!--more-->
+
 ### GolangIDE 设置试用30天重置
 
 1. 添加插件库
