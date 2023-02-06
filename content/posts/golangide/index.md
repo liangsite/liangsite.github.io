@@ -4,11 +4,15 @@ subtitle: ""
 date: 2023-02-05T21:31:36+08:00
 draft: false
 description: "GlangIDE无限重置30天试用期"
+tags:
+- GolangIDE
+categories:
+- go
 ---
 
 <!--more-->
 
-### GolangIDE 设置试用30天重置
+### GolangIDE 30天试用期重置
 
 1. 添加插件库
 ```text

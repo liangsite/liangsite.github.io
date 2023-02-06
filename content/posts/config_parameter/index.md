@@ -407,6 +407,7 @@ comment: false
 ```
 
 #### 配置添加友链
+- [Font Awesome 图标库](https://fontawesome.com/search?m=free&o=r)
 - config.toml
 ```yaml
   [[menu.main]]
@@ -416,7 +417,7 @@ comment: false
     name = "友链"
     url = "/friends/"
     title = ""
-    weight = 3
+    weight = 4
     [menu.main.params]
       icon = "fa-solid fa-users"
 ```

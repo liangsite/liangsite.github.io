@@ -58,7 +58,7 @@ enableRoboteTXT = true
     name = "友链"
     url = "/friends/"
     title = ""
-    weight = 3
+    weight = 4
     [menu.main.params]
       icon = "fa-solid fa-users"
 
