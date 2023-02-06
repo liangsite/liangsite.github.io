@@ -439,7 +439,7 @@ comment: false
         label = ""
         lightTheme = "github-light"
         darkTheme = "github-dark"
-``````text
+```
 
 {{< admonition tip "提示" false >}}
 文章开头将`comment: falase` 这个参数删除，否则页面将不会显示评论。
