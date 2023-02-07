@@ -1,0 +1,5 @@
+#!/bin/bash
+
+hugo-105 --mnify
+if [[ $? -eq 0 ]];then
+  git add 

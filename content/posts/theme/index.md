@@ -8,8 +8,6 @@ authorLink: "https://hai.ergua.cc/"
 authorEmail: ""
 description: ""
 keywords: ""
-utterances: 
-- label: "theme"
 license: ""
 weight: 0
 
