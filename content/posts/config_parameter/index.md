@@ -5,11 +5,10 @@ date: 2023-01-14T13:08:57+08:00
 draft: false
 author: "小橘子Single"
 authorLink: "https://hai.ergua.cc"
-authorEmail: ""
 description: "配置文件参数值修改"
 keywords: ""
 license: ""
-weight: 0
+weight: 1
 
 tags:
 - FixIt
@@ -21,8 +20,8 @@ hiddenFromSearch: false
 
 summary: ""
 resources:
-- name:
-  src:
+- name: "featured-image"
+  src: hugo.png
     
 toc:
   enable: true
@@ -38,10 +37,9 @@ repost:
 
 # See details front matter: https://fixit.lruihao.cn/theme-documentation-content/#front-matter
 ---
-
+优化个人主页设置
 <!--more-->
 
-## 配置文件参数值修改
 ### 主页头像设置
 位置正中间
 ```toml
@@ -87,6 +85,19 @@ hugo new posts/test/test.md
 Content "/your_path_hugo_blog/content/posts/test/test.md" created
 ```
 
+### 文章封面图设置
+- 可以利用文章前置参数`resources`来当封面图，好处是图片可以链接到内容
+- 封面图要与文章是同一级目录下。 
+- `<!--more-->` 的前一行是摘要，优先`description`这个前置摘要参数。
+
+```markdown
+resources:
+- name: "featured-image"              # name的名称是固定的，否则图片链接不了内容
+  src:  xxx.jpg                       # jpg,png......
+- name: "featured-image-preview"
+  src: xxx.png
+```
+
 ### 文章模板设置
 - `default.md`模板
 ```markdown
@@ -122,8 +133,8 @@ hiddenFromSearch: false     # 如果设为 true, 这篇文章将不会显示在�
 
 summary: ""                 # 设置该文章摘要 
 resources:                  # 设置本地资源引用，会在resources目录下寻找
-- name: featured-image      # 图片名称
-  src: featured-image.jpg   # resources目录下图片
+- name: featured-image      # 固定参数名称
+  src: featured-image.jpg   # 图片名称,需要与文章同级目录下
 - name: featured-image-preview
   src: featured-image-preview.jpg
 
@@ -197,12 +208,6 @@ on:                  # 要自动触发工作流，使用on定义哪些事件可�
   push:              # 工作流的触发器。push事件，将更改推送到存储库或合并拉​​取请求时都会触发工作流运行。
     branches:
       - main         # Set a branch to deploy 触发器会根据设置的分支去操作
-  pull_request:      # 拉取分支请求
-    paths:           # 事件过滤器
-      - 'public/**'  
-      - '.gitmodules'
-      - 'themes'
-      - 'config/_default/config.toml'
 
 jobs:               # 将工作流中运行的所有作业组合在一起
   deploy:           # 作业名称

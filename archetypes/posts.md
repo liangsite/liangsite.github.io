@@ -21,7 +21,7 @@ hiddenFromSearch: false
 
 summary: ""
 resources:
-- name: 
+- name: "featured-image" 
   src: 
 - name: 
   src: 
